@@ -1,0 +1,13 @@
+// 1. WebSocket 連線網址：手機在外網，一律用外網 IP 搭配 8089
+var socket = new JsSIP.WebSocketInterface('wss://61.71.98.7:8089/ws'); 
+
+var configuration = {
+    sockets  : [ socket ],
+    // 2. A 客人的手機分機識別
+    uri      : 'sip:1001@61.71.98.7', 
+    // 3. A 客人的專屬強密碼
+    password : 'Qoo760723' 
+};
+
+// 4. 初始化 UA 引擎
+var ua = new JsSIP.UA(configuration);
